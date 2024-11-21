@@ -60,3 +60,4 @@ Route::get('/admin/productcat/edit' , [ProductController::class , 'edit']);
 Route::get('/' ,function () {
     return view('main.index');
 } );
+ // hi
