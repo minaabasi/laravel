@@ -49,36 +49,16 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
+                                                @foreach ($blogs as $blog )
                                                 <tr>
-                                                    <td>Car</td>
-                                                    <td>100</td>
-                                                    <td>200</td>
+                                                    <td>{{ $blog->title }}</td>
+                                                    <td>{{ $blog->body }}</td>
+                                                    <td><a href="/admin/blog/edit/{{ $blog->id }}">ویرایش</a></td>
                                                     <td>0</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Bike</td>
-                                                    <td>330</td>
-                                                    <td>240</td>
-                                                    <td>1</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Plane</td>
-                                                    <td>430</td>
-                                                    <td>540</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Yacht</td>
-                                                    <td>100</td>
-                                                    <td>200</td>
-                                                    <td>0</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Segway</td>
-                                                    <td>330</td>
-                                                    <td>240</td>
-                                                    <td>1</td>
-                                                </tr>
+                                                </tr>   
+                                                @endforeach
+                                                
+                                                
                                                 </tbody>
 
                                             </table>

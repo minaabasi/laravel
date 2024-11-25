@@ -37,100 +37,32 @@
                     <div class="card-body">
 
 
+                        <form action="/admin/blog/store" method="POST" >
+                            @csrf
 
                         <div class="form-group row">
                             <label for="example-text-input" class="col-sm-2 col-form-label">عنوان</label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="text" value="Artisanal kale" id="example-text-input">
+                                <input class="form-control" type="text" placeholder="عنوان مقاله ..." name="title" id="example-text-input">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="example-search-input" class="col-sm-2 col-form-label">Search</label>
+                            <label for="example-url-input" class="col-sm-2 col-form-label">آدرس مقاله</label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="search" value="How do I shoot web" id="example-search-input">
+                                <input class="form-control" type="url" placeholder="یک آدرس یونیک انتخاب کنید .." name="url" id="example-url-input">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="example-email-input" class="col-sm-2 col-form-label">Email</label>
+                            <label for="example-search-input" class="col-sm-2 col-form-label">متن</label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="email" value="bootstrap@example.com" id="example-email-input">
+                                <textarea class="form-control" rows="15" placeholder="نوشتن متن مقاله ..." name="body"></textarea>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="example-url-input" class="col-sm-2 col-form-label">URL</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="url" value="https://getbootstrap.com" id="example-url-input">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="example-tel-input" class="col-sm-2 col-form-label">Telephone</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="tel" value="1-(555)-555-5555" id="example-tel-input">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="example-password-input" class="col-sm-2 col-form-label">Password</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="password" value="hunter2" id="example-password-input">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="example-number-input" class="col-sm-2 col-form-label">Number</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="number" value="42" id="example-number-input">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="example-datetime-local-input" class="col-sm-2 col-form-label">Date and time</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="example-date-input" class="col-sm-2 col-form-label">Date</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="example-month-input" class="col-sm-2 col-form-label">Month</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="month" value="2011-08" id="example-month-input">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="example-week-input" class="col-sm-2 col-form-label">Week</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="week" value="2011-W33" id="example-week-input">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="example-time-input" class="col-sm-2 col-form-label">Time</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="time" value="13:45:00" id="example-time-input">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="example-color-input" class="col-sm-2 col-form-label">Color</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="color" value="#5985ee" id="example-color-input">
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Select</label>
-                            <div class="col-sm-10">
-                                <select class="form-control">
-                                    <option>Select</option>
-                                    <option>Large select</option>
-                                    <option>Small select</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-sm-2 col-form-label">Custom Select</label>
+                            <label class="col-sm-2 col-form-label">دسته بندی </label>
                             <div class="col-sm-10">
                                 <select class="custom-select">
-                                    <option selected>Open this select menu</option>
+                                    <option selected>دسته بندی مقاله خود را انتخاب کنید</option>
                                     <option value="1">One</option>
                                     <option value="2">Two</option>
                                     <option value="3">Three</option>
@@ -138,41 +70,19 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="example-text-input-lg" class="col-sm-2 col-form-label">Large</label>
+                            <label for="example-text-input" class="col-sm-2 col-form-label ">تصویر شاخص</label>
                             <div class="col-sm-10">
-                                <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" id="example-text-input-lg">
+                                <input class="form-control" type="file" id="example-text-input" name="pic">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="example-text-input-sm" class="col-sm-2 col-form-label">Small</label>
+                            <label for="example-text-input" class="col-sm-2 col-form-label "></label>
                             <div class="col-sm-10">
-                                <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" id="example-text-input-sm">
+                                <button class="form-control bg-primary text-light" type="submit"  id="example-text-input"> ارسال </button>
                             </div>
                         </div>
-                        <div class="form-group row has-success">
-                            <label for="inputHorizontalSuccess" class="col-sm-2 col-form-label">Email</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control form-control-success" id="inputHorizontalSuccess" placeholder="name@example.com">
-                                <div class="form-control-feedback">Success! You've done it.</div>
-                                <small class="form-text text-muted">Example help text that remains unchanged.</small>
-                            </div>
-                        </div>
-                        <div class="form-group row has-warning">
-                            <label for="inputHorizontalWarning" class="col-sm-2 col-form-label">Email</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control form-control-warning" id="inputHorizontalWarning" placeholder="name@example.com">
-                                <div class="form-control-feedback">Shucks, check the formatting of that and try again.</div>
-                                <small class="form-text text-muted">Example help text that remains unchanged.</small>
-                            </div>
-                        </div>
-                        <div class="form-group row has-danger">
-                            <label for="inputHorizontalDnger" class="col-sm-2 col-form-label">Email</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control form-control-danger" id="inputHorizontalDnger" placeholder="name@example.com">
-                                <div class="form-control-feedback">Sorry, that username's taken. Try another?</div>
-                                <small class="form-text text-muted">Example help text that remains unchanged.</small>
-                            </div>
-                        </div>
+
+                        </form>
                     </div>
                 </div>
             </div> <!-- end col -->

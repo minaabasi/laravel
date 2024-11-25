@@ -9,14 +9,14 @@
         <meta content="ThemeDesign" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <link rel="shortcut icon" href="../../dashboard/assets/images/favicon.ico">
+        <link rel="shortcut icon" href="{{ asset('../../dashboard/assets/images/favicon.ico') }}">
 
         <!-- morris css -->
-        <link rel="stylesheet" href="../plugins/morris/morris.css">
-
-        <link href="../../dashboard/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <link href="../../dashboard/assets/css/icons.css" rel="stylesheet" type="text/css">
-        <link href="../../dashboard/assets/css/style.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{{ asset('../plugins/morris/morris.css') }}">
+        
+        <link href="{{ asset('../../dashboard/assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('../../dashboard/assets/css/icons.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('../../dashboard/assets/css/style.css') }}" rel="stylesheet" type="text/css">
 
     </head>
 
@@ -48,7 +48,7 @@
                 <div class="left-side-logo d-block d-lg-none">
                     <div class="text-center">
 
-                        <a href="index.html" class="logo"><img src="../../dashboard/assets/images/logo_dark.png" height="20" alt="logo"></a>
+                        <a href="index.html" class="logo"><img src="{{ asset('../../dashboard/assets/images/logo_dark.png') }}" height="20" alt="logo"></a>
                     </div>
                 </div>
 
@@ -144,7 +144,7 @@
 
                         <div class="topbar-left	d-none d-lg-block">
                             <div class="text-center">
-                                <a href="index.html" class="logo"><img src="../../dashboard/assets/images/logo.png" height="22" alt="logo"></a>
+                                <a href="index.html" class="logo"><img src="{{ asset('../../dashboard/assets/images/logo.png') }}" height="22" alt="logo"></a>
                             </div>
                         </div>
 
@@ -289,26 +289,26 @@
 
 
         <!-- jQuery  -->
-        <script src="../../dashboard/assets/js/jquery.min.js"></script>
-        <script src="../../dashboard/assets/js/bootstrap.bundle.min.js"></script>
-        <script src="../../dashboard/assets/js/modernizr.min.js"></script>
-        <script src="../../dashboard/assets/js/detect.js"></script>
-        <script src="../../dashboard/assets/js/fastclick.js"></script>
-        <script src="../../dashboard/assets/js/jquery.slimscroll.js"></script>
-        <script src="../../dashboard/assets/js/jquery.blockUI.js"></script>
-        <script src="../../dashboard/assets/js/waves.js"></script>
-        <script src="../../dashboard/assets/js/jquery.nicescroll.js"></script>
-        <script src="../../dashboard/assets/js/jquery.scrollTo.min.js"></script>
+        <script src="{{ asset('../../dashboard/assets/js/jquery.min.js') }}"></script>
+        <script src="{{ asset('../../dashboard/assets/js/bootstrap.bundle.min.js') }}"></script>
+        <script src="{{ asset('../../dashboard/assets/js/modernizr.min.js') }}"></script>
+        <script src="{{ asset('../../dashboard/assets/js/detect.js') }}"></script>
+        <script src="{{ asset('../../dashboard/assets/js/fastclick.js') }}"></script>
+        <script src="{{ asset('../../dashboard/assets/js/jquery.slimscroll.js') }}"></script>
+        <script src="{{ asset('../../dashboard/assets/js/jquery.blockUI.js') }}"></script>
+        <script src="{{ asset('../../dashboard/assets/js/waves.js') }}"></script>
+        <script src="{{ asset('../../dashboard/assets/js/jquery.nicescroll.js') }}"></script>
+        <script src="{{ asset('../../dashboard/assets/js/jquery.scrollTo.min.js') }}"></script>
 
         <!--Morris Chart-->
-        <script src="../plugins/morris/morris.min.js"></script>
-        <script src="../plugins/raphael/raphael.min.js"></script>
+        <script src="{{ asset('../plugins/morris/morris.min.js') }}"></script>
+        <script src="{{ asset('../plugins/raphael/raphael.min.js') }}"></script>
 
         <!-- dashboard js -->
-        <script src="../../dashboard/assets/pages/dashboard.int.js"></script>
+        <script src="{{ asset('../../dashboard/assets/pages/dashboard.int.js') }}"></script>
 
         <!-- App js -->
-        <script src="../../dashboard/assets/js/app.js"></script>
+        <script src="{{ asset('../../dashboard/assets/js/app.js') }}"></script>
 
     </body>
 </html>

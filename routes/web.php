@@ -35,7 +35,8 @@ Route::get('/admin/login' , function () {
 Route::get('/admin/blog' , [BlogController::class , 'list']);
 Route::get('/admin/blog/list' , [BlogController::class , 'list']);
 Route::get('/admin/blog/create' , [BlogController::class , 'create']);
-Route::get('/admin/blog/edit' , [BlogController::class , 'edit']);
+Route::post('/admin/blog/store' , [BlogController::class , 'store']);
+Route::get('/admin/blog/edit/{blog}' , [BlogController::class , 'edit']);
 
 
 //admin blogcat
