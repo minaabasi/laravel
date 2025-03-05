@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogcatController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,47 +20,81 @@ use Illuminate\Support\Facades\Route;
 
 //admin route
 
-Route::get('/admin', function () {
-    return view('dashboard.dashboard');
-});
+Route::get('/admin', [UserController::class , 'index'])->name('admin');
 
-Route::get('/admin/register' , function () {
-    return view('dashboard.register');
-});
 
-Route::get('/admin/login' , function () {
-    return view('dashboard.login');
-});
 
+Route::get('/register' , [AuthController::class , 'register'])->name('register');
+Route::post('/register' , [AuthController::class , 'store'])->name('register.store');
+
+
+Route::get('/login' , [AuthController::class , 'login'])->name('login');
+Route::post('/login' , [AuthController::class , 'loginPost'])->name('login.post');
+
+Route::get('/logout' , [AuthController::class , 'logout'])->name('logout');
 
 //admin blog
-Route::get('/admin/blog' , [BlogController::class , 'list']);
-Route::get('/admin/blog/list' , [BlogController::class , 'list']);
-Route::get('/admin/blog/create' , [BlogController::class , 'create']);
-Route::post('/admin/blog/store' , [BlogController::class , 'store']);
-Route::get('/admin/blog/edit/{blog}' , [BlogController::class , 'edit']);
+Route::group(['middleware' => ['auth:web'],'prefix' => 'admin/blog'] , function(){
+    Route::get('/' , [BlogController::class , 'list']);
+    Route::get('/list' , [BlogController::class , 'list']);
+    Route::get('/create' , [BlogController::class , 'create']);
+    Route::post('/store' , [BlogController::class , 'store']);
+    Route::get('/edit/{blog}' , [BlogController::class , 'edit']);
+});
 
 
 //admin blogcat
-Route::get('/admin/blogcat' , [BlogcatController::class , 'list']);
-Route::get('/admin/blogcat/list' , [BlogcatController::class , 'list']);
-Route::get('/admin/blogcat/create' , [BlogcatController::class , 'create']);
-Route::get('/admin/blogcat/edit' , [BlogcatController::class , 'edit']);
+Route::group(['middleware' => ['auth:web'] ,'prefix' => 'admin/blogcat'], function(){
+    Route::get('/' , [BlogcatController::class , 'list']);
+    Route::get('/list' , [BlogcatController::class , 'list']);
+    Route::get('/create' , [BlogcatController::class , 'create']);
+    Route::get('/edit' , [BlogcatController::class , 'edit']);
+});
 
 //admin product
-Route::get('/admin/product' , [ProductController::class , 'list']);
-Route::get('/admin/product/list' , [ProductController::class , 'list']);
-Route::get('/admin/product/create' , [ProductController::class , 'create']);
-Route::get('/admin/product/edit' , [ProductController::class , 'edit']);
+Route::group(['middleware' => ['auth:web'] ,'prefix' => 'admin/product'] , function(){
+    Route::get('/' , [ProductController::class , 'list']);
+    Route::get('/list' , [ProductController::class , 'list']);
+    Route::get('/create' , [ProductController::class , 'create']);
+    Route::get('/edit' , [ProductController::class , 'edit']);
+});
+
+
+// admin Users
+
+Route::group(['middleware'=>['auth:web'],'prefix'=>'admin/user'],function(){
+    Route::get('/' , [UserController::class , 'list'])->name('users.list');
+    Route::get('/create' , [UserController::class , 'create'])->name('users.create');
+    Route::post('/store' , [UserController::class , 'store'])->name('users.store');
+    Route::get('/show/{user}' , [UserController::class , 'show'])->name('users.show');
+    Route::put('/update/{user}' , [UserController::class , 'update'])->name('users.update');
+    Route::delete('/delete/{user}' , [UserController::class , 'destroy'])->name('users.destroy');
+});
+
+
+
+
+ 
+
 
 //admin product
-Route::get('/admin/productcat' , [ProductController::class , 'list']);
-Route::get('/admin/productcat/list' , [ProductController::class , 'list']);
-Route::get('/admin/productcat/create' , [ProductController::class , 'create']);
-Route::get('/admin/productcat/edit' , [ProductController::class , 'edit']);
+Route::group(['prefix' => 'admin/productcat'] , function(){
+    Route::get('/' , [ProductController::class , 'list']);
+    Route::get('/list' , [ProductController::class , 'list']);
+    Route::get('/create' , [ProductController::class , 'create']);
+    Route::get('/edit' , [ProductController::class , 'edit']);
+});
+
 
 
 Route::get('/' ,function () {
     return view('main.index');
 } );
  
+
+
+
+
+Route::fallback(function(){
+    return "404";
+});

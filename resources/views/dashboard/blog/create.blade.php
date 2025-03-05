@@ -44,18 +44,27 @@
                             <label for="example-text-input" class="col-sm-2 col-form-label">عنوان</label>
                             <div class="col-sm-10">
                                 <input class="form-control" type="text" placeholder="عنوان مقاله ..." name="title" id="example-text-input">
+                                @error('title')
+                                    <p style="color:red">{{ $message }}</p>
+                                @enderror
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="example-url-input" class="col-sm-2 col-form-label">آدرس مقاله</label>
                             <div class="col-sm-10">
                                 <input class="form-control" type="url" placeholder="یک آدرس یونیک انتخاب کنید .." name="url" id="example-url-input">
+                                @error('url')
+                                    <p style="color:red">{{ $message }}</p>
+                                @enderror
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="example-search-input" class="col-sm-2 col-form-label">متن</label>
                             <div class="col-sm-10">
                                 <textarea class="form-control" rows="15" placeholder="نوشتن متن مقاله ..." name="body"></textarea>
+                                @error('body')
+                                    <p style="color:red">{{ $message }}</p>
+                                @enderror
                             </div>
                         </div>
                         <div class="form-group row">

@@ -70,23 +70,41 @@
                                 </div>
 
                                 <div class="p-2">
-                                    <form class="form-horizontal m-t-20" action="index.html">
-
+                                    <form class="form-horizontal m-t-20" action="{{ route('register.store') }}" method="POST">
+                                        @csrf
                                         <div class="form-group row">
                                             <div class="col-12">
-                                                <input class="form-control" type="email" required="" placeholder="Email">
+                                                <input class="form-control" type="email" name="email" value="{{ old('email') }}" placeholder="Email">
+                                                @error('email')
+                                                    {{ $message }}
+                                                @enderror
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <div class="col-12">
-                                                <input class="form-control" type="text" required="" placeholder="Username">
+                                                <input class="form-control" type="text" name="name" value="{{ old('name') }}" placeholder="Username">
+                                                @error('name')
+                                                    {{ $message }}
+                                                @enderror
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <div class="col-12">
-                                                <input class="form-control" type="password" required="" placeholder="Password">
+                                                <input class="form-control" type="password" name="password" required="" placeholder="Password">
+                                                @error('password')
+                                                    {{ $message }}
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <div class="col-12">
+                                                <input class="form-control" type="password" name="password_confirmation" required="" placeholder="confirm Password">
+                                                @error('confirm_password')
+                                                    {{ $message }}
+                                                @enderror
                                             </div>
                                         </div>
 
@@ -107,7 +125,7 @@
 
                                         <div class="form-group m-t-10 mb-0 row">
                                             <div class="col-12 m-t-20 text-center">
-                                                <a href="pages-login.html" class="text-muted">Already have account?</a>
+                                                <a href="{{ route('login') }}" class="text-muted">Already have account?</a>
                                             </div>
                                         </div>
                                     </form>

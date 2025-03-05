@@ -69,17 +69,20 @@
                                 </div>
 
                                 <div class="p-2">
-                                    <form class="form-horizontal m-t-20" action="index.html">
-
+                                    <form class="form-horizontal m-t-20" action="{{ route('login.post') }}" method="POST">
+                                        @csrf
+                                        @if (session()->has('error'))
+                                        <div class="alert alert-danger">{{ session('error') }}</div>
+                                        @endif
                                         <div class="form-group row">
                                             <div class="col-12">
-                                                <input class="form-control" type="text" required="" placeholder="Username">
+                                                <input class="form-control" type="email" name="email" required="" placeholder="email">
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
                                             <div class="col-12">
-                                                <input class="form-control" type="password" required="" placeholder="Password">
+                                                <input class="form-control" type="password" name="password" required="" placeholder="Password">
                                             </div>
                                         </div>
 
@@ -103,7 +106,7 @@
                                                 <a href="pages-recoverpw.html" class="text-muted"><i class="mdi mdi-lock"></i> Forgot your password?</a>
                                             </div>
                                             <div class="col-sm-5 m-t-20">
-                                                <a href="pages-register.html" class="text-muted"><i class="mdi mdi-account-circle"></i> Create an account</a>
+                                                <a href="{{ route('register') }}" class="text-muted"><i class="mdi mdi-account-circle"></i> Create an account</a>
                                             </div>
                                         </div>
                                     </form>
