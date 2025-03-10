@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogcatController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ForgetPasswordController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,15 @@ Route::get('/login' , [AuthController::class , 'login'])->name('login');
 Route::post('/login' , [AuthController::class , 'loginPost'])->name('login.post');
 
 Route::get('/logout' , [AuthController::class , 'logout'])->name('logout');
+
+
+Route::get('/forgetpassword' , [ForgetPasswordController::class , 'forgetpassword'])->name('forgetpassword');
+Route::post('/forgetpassword' , [ForgetPasswordController::class , 'forgetpasswordPost'])->name('forgetpassword.post');
+
+
+Route::get('/resetpassword/{token}' , [ForgetPasswordController::class , 'resetpassword'])->name('resetpassword');
+Route::post('/resetpassword' , [ForgetPasswordController::class , 'resetpasswordPost'])->name('resetpassword.post');
+
 
 //admin blog
 Route::group(['middleware' => ['auth:web'],'prefix' => 'admin/blog'] , function(){
@@ -74,7 +84,7 @@ Route::group(['middleware'=>['auth:web'],'prefix'=>'admin/user'],function(){
 
 
 
- 
+
 
 
 //admin product
@@ -90,7 +100,7 @@ Route::group(['prefix' => 'admin/productcat'] , function(){
 Route::get('/' ,function () {
     return view('main.index');
 } );
- 
+
 
 
 

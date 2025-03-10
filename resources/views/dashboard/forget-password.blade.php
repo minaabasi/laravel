@@ -9,7 +9,7 @@
         <meta content="ThemeDesign" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <link rel="shortcut icon" href="../dashboard/assets/images/favicon.ico">
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
 
         <link href="../dashboard/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="../dashboard/assets/css/icons.css" rel="stylesheet" type="text/css">
@@ -35,7 +35,7 @@
 
         <!-- Begin page -->
         <div class="home-btn d-none d-sm-block">
-            <a href="index.html" class="text-dark"><i class="mdi mdi-home h1"></i></a>
+            <a href="{{ route('admin') }}" class="text-dark"><i class="mdi mdi-home h1"></i></a>
         </div>
 
         <div class="account-pages">
@@ -61,55 +61,30 @@
                     <div class="col-lg-5">
                         <div class="card mb-0">
                             <div class="card-body">
-                                <div class="p-2">
-                                    <h4 class="text-muted float-right font-18 mt-4">Sign In</h4>
+                                <div class="text-center">
                                     <div>
                                         <a href="index.html" class="logo logo-admin"><img src="../dashboard/assets/images/logo_dark.png" height="28" alt="logo"></a>
                                     </div>
+                                    <h4 class="text-muted font-18 mt-4">Reset Password</h4>
                                 </div>
 
                                 <div class="p-2">
-                                    <form class="form-horizontal m-t-20" action="{{ route('login.post') }}" method="POST">
+                                    <form class="form-horizontal m-t-20" action="{{ route('forgetpassword.post') }}" method="POST">
                                         @csrf
-                                        @if (session()->has('error'))
-                                        <div class="alert alert-danger">{{ session('error') }}</div>
-                                        @endif
                                         <div class="form-group row">
                                             <div class="col-12">
-                                                <input class="form-control" type="email" name="email" required="" placeholder="email">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <div class="col-12">
-                                                <input class="form-control" type="password" name="password" required="" placeholder="Password">
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group row">
-                                            <div class="col-12">
-                                                <div class="custom-control custom-checkbox">
-                                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                    <label class="custom-control-label" for="customCheck1">Remember me</label>
-                                                </div>
+                                                <input class="form-control" type="email" required="" name="email" placeholder="Email">
                                             </div>
                                         </div>
 
                                         <div class="form-group text-center row m-t-20">
                                             <div class="col-12">
-                                                <button class="btn btn-primary btn-block waves-effect waves-light" type="submit">Log In</button>
+                                                <button class="btn btn-primary btn-block waves-effect waves-light" type="submit">Send Email</button>
                                             </div>
                                         </div>
 
-                                        <div class="form-group m-t-10 mb-0 row">
-                                            <div class="col-sm-7 m-t-20">
-                                                <a href="{{ route('forgetpassword') }}" class="text-muted"><i class="mdi mdi-lock"></i> Forgot your password?</a>
-                                            </div>
-                                            <div class="col-sm-5 m-t-20">
-                                                <a href="{{ route('register') }}" class="text-muted"><i class="mdi mdi-account-circle"></i> Create an account</a>
-                                            </div>
-                                        </div>
                                     </form>
+                                    <!-- end form -->
                                 </div>
 
                             </div>
@@ -119,7 +94,6 @@
                 <!-- end row -->
             </div>
         </div>
-
 
 
         <!-- jQuery  -->
