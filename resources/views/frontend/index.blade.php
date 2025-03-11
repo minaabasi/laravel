@@ -1,4 +1,4 @@
-@extends('main.layout.layout')
+@extends('frontend.layout.layout')
 @section('content')
 
 <section class="banner-section-three">
