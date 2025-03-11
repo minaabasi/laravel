@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\frontend\BlogController;
+use App\Http\Controllers\frontend\HomeController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,12 +21,11 @@ use Illuminate\Support\Facades\Route;
 
 
 //main route
-Route::get('/' ,function () {
-    return view('frontend.index');
-} );
+Route::get('/' ,[HomeController::class , 'index'] )->name('home');
 
 //blog show
-Route::get('/blog' , [BlogController::class , 'index'])->name('blog.index');
+Route::get('/blog' , [BlogController::class , 'index'])->name('blog');
+Route::get('/blog/show/{blog}' , [BlogController::class , 'show'])->name('blog.show');
 
 
 

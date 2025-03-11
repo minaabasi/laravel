@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <title>Gazek HTML-5 Template | Homepage 03</title>
 <!-- Stylesheets -->
+<base href="{{ url('/') }}/">
 <link href="assets/css/bootstrap.css" rel="stylesheet">
 <link href="assets/css/style.css" rel="stylesheet">
 <link href="assets/css/responsive.css" rel="stylesheet">
@@ -91,30 +92,9 @@
 
 						<div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
 							<ul class="navigation clearfix">
-								<li class="current dropdown"><a href="#">Home</a>
-									<ul>
-										<li><a href="index.html">Home Page 01</a></li>
-										<li><a href="index-2.html">Home Page 02</a></li>
-										<li><a href="index-3.html">Home Page 03</a></li>
-										<li class="dropdown"><a href="#">Header Styles</a>
-											<ul>
-												<li><a href="index.html">Header Style 01</a></li>
-												<li><a href="index-2.html">Header Style 02</a></li>
-												<li><a href="index-3.html">Header Style 03</a></li>
-											</ul>
-										</li>
-									</ul>
-								</li>
+								<li><a href="{{ route('home') }}">Home</a></li>
+								<li><a href="{{ route('blog') }}">blog</a></li>
 								<li><a href="#">About</a></li>
-								<li><a href="#">Services</a></li>
-								<li><a href="#">Portfolio</a></li>
-								<li class="dropdown"><a href="#">News</a>
-									<ul>
-										<li><a href="blog.html">Our Blog</a></li>
-										<li><a href="blog-classic.html">Blog Classic</a></li>
-										<li><a href="blog-single.html">Blog Single</a></li>
-									</ul>
-								</li>
 								<li><a href="contact.html">Contact us</a></li>
 							</ul>
 						</div>

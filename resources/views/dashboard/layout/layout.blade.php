@@ -13,7 +13,7 @@
 
         <!-- morris css -->
         <link rel="stylesheet" href="{{ asset('../plugins/morris/morris.css') }}">
-        
+
         <link href="{{ asset('../../dashboard/assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('../../dashboard/assets/css/icons.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('../../dashboard/assets/css/style.css') }}" rel="stylesheet" type="text/css">
@@ -249,7 +249,7 @@
                                 <li class="list-inline-item dropdown notification-list d-none d-sm-inline-block">
                                     <a class="nav-link dropdown-toggle arrow-none waves-effect" data-toggle="dropdown" href="#" role="button"
                                     aria-haspopup="false" aria-expanded="false">
-                                        {{ $now }} <i class="mdi mdi-plus"></i>
+                                        <i class="mdi mdi-plus"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-animated">
                                         <a class="dropdown-item" href="#">Action</a>

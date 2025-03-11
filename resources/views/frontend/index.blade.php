@@ -880,6 +880,8 @@
         <div class="row clearfix">
 
             <!-- News Block -->
+
+            @foreach ($blogs as $blog)
             <div class="news-block col-lg-4 col-md-6 col-sm-12">
                 <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
                     <div class="image">
@@ -887,51 +889,17 @@
                     </div>
                     <div class="lower-content">
                         <ul class="post-meta">
-                            <li><span class="icon fa fa-calendar"></span> March 15, 2020</li>
+                            <li><span class="icon fa fa-calendar"></span> {{ $blog->created_at }}</li>
                             <li><span class="icon fa fa-comment-o"></span> 187</li>
                         </ul>
-                        <h5><a href="blog-single.html">Streamline Your Projects With Our Easy Solutions</a></h5>
-                        <div class="text">Excepteur sint occaecat cupidatat non proident mollit any laboruys. Sed ut perspiciatis unde om accusantium dolor que totams.</div>
+                        <h5><a href="blog-single.html">{{ $blog->title }}</a></h5>
+                        <div class="text">{{ str()->limit($blog->body , 100) }}</div>
                         <a href="blog-single.html" class="theme-btn btn-style-four"><span class="txt">Read More</span></a>
                     </div>
                 </div>
             </div>
+            @endforeach
 
-            <!-- News Block -->
-            <div class="news-block col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    <div class="image">
-                        <a href="blog-single.html"><img src="https://via.placeholder.com/360x280" alt="" /></a>
-                    </div>
-                    <div class="lower-content">
-                        <ul class="post-meta">
-                            <li><span class="icon fa fa-calendar"></span> March 15, 2020</li>
-                            <li><span class="icon fa fa-comment-o"></span> 187</li>
-                        </ul>
-                        <h5><a href="blog-single.html">Why We Are Top of The Heap Digital Agency In Town</a></h5>
-                        <div class="text">Excepteur sint occaecat cupidatat non proident mollit any laboruys. Sed ut perspiciatis unde om accusantium dolor que totams.</div>
-                        <a href="blog-single.html" class="theme-btn btn-style-four"><span class="txt">Read More</span></a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- News Block -->
-            <div class="news-block col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
-                    <div class="image">
-                        <a href="blog-single.html"><img src="https://via.placeholder.com/360x280" alt="" /></a>
-                    </div>
-                    <div class="lower-content">
-                        <ul class="post-meta">
-                            <li><span class="icon fa fa-calendar"></span> March 15, 2020</li>
-                            <li><span class="icon fa fa-comment-o"></span> 187</li>
-                        </ul>
-                        <h5><a href="blog-single.html">Streamline Your Projects With Our Easy Solutions</a></h5>
-                        <div class="text">Excepteur sint occaecat cupidatat non proident mollit any laboruys. Sed ut perspiciatis unde om accusantium dolor que totams.</div>
-                        <a href="blog-single.html" class="theme-btn btn-style-four"><span class="txt">Read More</span></a>
-                    </div>
-                </div>
-            </div>
 
         </div>
     </div>

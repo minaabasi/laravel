@@ -10,6 +10,10 @@ class BlogController extends Controller
 {
     public function index(){
         $blogs=Blog::all();
-        return view('frontend.blog.index');
+        return view('frontend.blog.index' , compact('blogs'));
+    }
+
+    public function show(Request $request , Blog $blog){
+        return view('frontend.blog.show' , compact('blog'));
     }
 }
