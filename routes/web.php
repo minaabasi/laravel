@@ -1,11 +1,11 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\BlogcatController;
-use App\Http\Controllers\BlogController;
-use App\Http\Controllers\ForgetPasswordController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\admin\AuthController;
+use App\Http\Controllers\admin\BlogcatController;
+use App\Http\Controllers\admin\BlogController;
+use App\Http\Controllers\admin\ForgetPasswordController;
+use App\Http\Controllers\admin\ProductController;
+use App\Http\Controllers\admin\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -95,6 +95,17 @@ Route::group(['prefix' => 'admin/productcat'] , function(){
 Route::get('/' ,function () {
     return view('main.index');
 } );
+
+//blog show
+Route::get('/blog' , [BlogController::class , 'list'])->name('blog.list');
+
+
+
+
+
+
+
+
 
 
 //404 route

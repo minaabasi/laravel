@@ -21,7 +21,7 @@ class AuthController extends Controller
         }
 
         return view('dashboard.login');
-        
+
     }
 
 
@@ -31,7 +31,7 @@ class AuthController extends Controller
             'name'=>$request->name ,
             'email'=>$request->email,
             'password'=>Hash::make($request->password) ,
-        ]); 
+        ]);
 
         return redirect()->route('login');
     }
