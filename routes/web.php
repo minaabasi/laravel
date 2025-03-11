@@ -19,26 +19,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//admin route
 
+
+//admin route
 Route::get('/admin', [UserController::class , 'index'])->name('admin');
 
-
-
+//register route
 Route::get('/register' , [AuthController::class , 'register'])->name('register');
 Route::post('/register' , [AuthController::class , 'store'])->name('register.store');
 
-
+//login route
 Route::get('/login' , [AuthController::class , 'login'])->name('login');
 Route::post('/login' , [AuthController::class , 'loginPost'])->name('login.post');
 
+//logout route
 Route::get('/logout' , [AuthController::class , 'logout'])->name('logout');
 
-
+//forget password route
 Route::get('/forgetpassword' , [ForgetPasswordController::class , 'forgetpassword'])->name('forgetpassword');
 Route::post('/forgetpassword' , [ForgetPasswordController::class , 'forgetpasswordPost'])->name('forgetpassword.post');
 
-
+//reset password route
 Route::get('/resetpassword/{token}' , [ForgetPasswordController::class , 'resetpassword'])->name('resetpassword');
 Route::post('/resetpassword' , [ForgetPasswordController::class , 'resetpasswordPost'])->name('resetpassword.post');
 
@@ -51,7 +52,6 @@ Route::group(['middleware' => ['auth:web'],'prefix' => 'admin/blog'] , function(
     Route::post('/store' , [BlogController::class , 'store']);
     Route::get('/edit/{blog}' , [BlogController::class , 'edit']);
 });
-
 
 //admin blogcat
 Route::group(['middleware' => ['auth:web'] ,'prefix' => 'admin/blogcat'], function(){
@@ -71,7 +71,6 @@ Route::group(['middleware' => ['auth:web'] ,'prefix' => 'admin/product'] , funct
 
 
 // admin Users
-
 Route::group(['middleware'=>['auth:web'],'prefix'=>'admin/user'],function(){
     Route::get('/' , [UserController::class , 'list'])->name('users.list');
     Route::get('/create' , [UserController::class , 'create'])->name('users.create');
@@ -80,11 +79,6 @@ Route::group(['middleware'=>['auth:web'],'prefix'=>'admin/user'],function(){
     Route::put('/update/{user}' , [UserController::class , 'update'])->name('users.update');
     Route::delete('/delete/{user}' , [UserController::class , 'destroy'])->name('users.destroy');
 });
-
-
-
-
-
 
 
 //admin product
@@ -97,14 +91,13 @@ Route::group(['prefix' => 'admin/productcat'] , function(){
 
 
 
+//main route
 Route::get('/' ,function () {
     return view('main.index');
 } );
 
 
-
-
-
+//404 route
 Route::fallback(function(){
     return "404";
 });
