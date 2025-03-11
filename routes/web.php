@@ -97,7 +97,7 @@ Route::get('/' ,function () {
 } );
 
 //blog show
-Route::get('/blog' , [BlogController::class , 'list'])->name('blog.list');
+// Route::get('/blog' , [BlogController::class , 'list'])->name('blog.list');
 
 
 

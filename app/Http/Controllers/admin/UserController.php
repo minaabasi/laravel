@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -9,7 +10,7 @@ use Carbon\Carbon;
 class UserController extends Controller
 {
     public function index(){
-        if(auth()->check()){       
+        if(auth()->check()){
 
 // گرفتن تاریخ و زمان فعلی
         $time = Carbon::now('Asia/Tehran');
@@ -39,7 +40,7 @@ class UserController extends Controller
             'password'=>$request->password,
         ]);
 
-        return redirect()->route('users.list'); 
+        return redirect()->route('users.list');
     }
 
 
@@ -53,12 +54,12 @@ class UserController extends Controller
             'email'=>$request->email,
         ]);
 
-        return redirect()->route('users.list'); 
+        return redirect()->route('users.list');
 
     }
 
     public function destroy(User $user){
     $user->delete();
-    return redirect()->route('users.list');     
+    return redirect()->route('users.list');
     }
 }
