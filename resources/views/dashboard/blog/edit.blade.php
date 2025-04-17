@@ -37,8 +37,9 @@
                     <div class="card-body">
 
 
-                        <form action="/admin/blog/update" method="POST" >
+                        <form action="{{ route('admin.blog.update' , ['blog'=> $blog->id]) }}" method="POST" >
                             @csrf
+                            @method('PUT')
 
                         <div class="form-group row">
                             <label for="example-text-input" class="col-sm-2 col-form-label">عنوان</label>

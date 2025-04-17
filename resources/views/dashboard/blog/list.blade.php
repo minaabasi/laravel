@@ -42,6 +42,8 @@
                                             <table id="mainTable" class="table table-striped mb-0">
                                                 <thead>
                                                 <tr>
+
+                                                    <th>شناسه</th>
                                                     <th>عنوان</th>
                                                     <th>تاریخ</th>
                                                     <th>ویرایش</th>
@@ -51,10 +53,17 @@
                                                 <tbody>
                                                 @foreach ($blogs as $blog )
                                                 <tr>
+                                                    <td>{{ $blog->id }}</td>
                                                     <td>{{ $blog->title }}</td>
                                                     <td>{{ $blog->body }}</td>
                                                     <td><a href="/admin/blog/edit/{{ $blog->id }}">ویرایش</a></td>
-                                                    <td>0</td>
+                                                    <td>
+                                                        <form action="{{ route('blog.destroy' , ['blog'=> $blog->id]) }}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <input type="submit" value="حذف" class="bg-danger">
+                                                        </form>
+                                                    </td>
                                                 </tr>   
                                                 @endforeach
                                                 

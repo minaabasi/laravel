@@ -49,11 +49,12 @@ Route::post('/resetpassword' , [ForgetPasswordController::class , 'resetpassword
 
 //admin blog
 Route::group(['middleware' => ['auth:web'],'prefix' => 'admin/blog'] , function(){
-    Route::get('/' , [BlogController::class , 'list']);
-    Route::get('/list' , [BlogController::class , 'list']);
-    Route::get('/create' , [BlogController::class , 'create']);
-    Route::post('/store' , [BlogController::class , 'store']);
-    Route::get('/edit/{blog}' , [BlogController::class , 'edit']);
+    Route::get('/list' , [BlogController::class , 'list'])->name('admin.blog.list');
+    Route::get('/create' , [BlogController::class , 'create'])->name('admin.blog.create');
+    Route::post('/store' , [BlogController::class , 'store'])->name('admin.blog.store');
+    Route::get('/edit/{blog}' , [BlogController::class , 'edit'])->name('admin.blog.edit');
+    Route::put('/edit/{blog}' , [BlogController::class , 'update'])->name('admin.blog.update');
+    Route::delete('/delete/{blog}' , [BlogController::class , 'destroy'])->name('blog.destroy');
 });
 
 //admin blogcat

@@ -38,4 +38,19 @@ class BlogController extends Controller
             'blog'=>$blog
         ]);
     }
+
+    public function update(Blog $blog , Request $request){
+        $blog->update([
+            'title'=>$request->title,
+            'body'=>$request->body,
+            'url'=>$request->url
+        ]);
+
+        return redirect()->route('admin.blog.list');
+    }
+
+    public function destroy(Blog $blog){
+        $blog->delete();
+        return redirect()->route('admin.blog.list');
+    }
 }
