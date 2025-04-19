@@ -37,6 +37,8 @@ class DatabaseSeeder extends Seeder
                 'blog_id' => $blog->id,
             ]);
     }
+
+    $this->call(UserSeeder::class);
         
     }
 }
