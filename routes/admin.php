@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\ForgetPasswordController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\UserController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -83,6 +84,9 @@ Route::group(['middleware'=>['auth:web'],'prefix'=>'admin/user'],function(){
     Route::put('/update/{user}' , [UserController::class , 'update'])->name('users.update');
     Route::delete('/delete/{user}' , [UserController::class , 'destroy'])->name('users.destroy');
 });
+
+// admin profile
+Route::get('/admin/profile/{id}' , [ProfileController::class , 'index'])->middleware('auth')->name('profile.index');    
 
 
 //admin product
