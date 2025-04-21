@@ -4,6 +4,7 @@ namespace App\Http\Controllers\frontend;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -14,6 +15,7 @@ class BlogController extends Controller
     }
 
     public function show(Request $request , Blog $blog){
-        return view('frontend.blog.show' , compact('blog'));
+        $comments=Comment::find($blog);
+        return view('frontend.blog.show' , compact('blog' , 'comments'));
     }
 }

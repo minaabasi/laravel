@@ -88,23 +88,18 @@
 								<h3>Post Comments (2)</h3>
 							</div>
 
-							<div class="comment-box">
-								<div class="comment">
-									<div class="author-thumb"><img src="https://via.placeholder.com/60x60" alt=""></div>
-									<div class="comment-info clearfix"><strong>Tanya Leepman</strong><div class="comment-time">February 15, 2020 at 3:48pm</div></div>
-									<div class="text">Tempor incididunt labore loremy enim veniams lorem ipsum dol labore dolore magna enim ad veniam quis incididunt ut laboret dolore sed magna aliqua.</div>
-									<a class="theme-btn reply-btn" href="#">Reply <span class="arrow flaticon-arrow-pointing-to-right"></span></a>
+							@foreach ($comments as $comment)
+								<div class="comment-box">
+									<div class="comment">
+										<div class="author-thumb"><img src="https://via.placeholder.com/60x60" alt=""></div>
+										<div class="comment-info clearfix"><strong>{{ $comment->comment }}</strong><div class="comment-time">February 15, 2020 at 3:48pm</div></div>
+										<div class="text">Tempor incididunt labore loremy enim veniams lorem ipsum dol labore dolore magna enim ad veniam quis incididunt ut laboret dolore sed magna aliqua.</div>
+										<a class="theme-btn reply-btn" href="#">Reply <span class="arrow flaticon-arrow-pointing-to-right"></span></a>
+									</div>
 								</div>
-							</div>
+							@endforeach
 
-							<div class="comment-box">
-								<div class="comment">
-									<div class="author-thumb"><img src="https://via.placeholder.com/60x60" alt=""></div>
-									<div class="comment-info clearfix"><strong>William Baysen</strong><div class="comment-time">February 15, 2020 at 3:48pm</div></div>
-									<div class="text">Tempor incididunt labore loremy enim veniams lorem ipsum dol labore dolore magna aliqua ad veniam quis incididunt ut magna aliqua laboret dolore.</div>
-									<a class="theme-btn reply-btn" href="#">Reply <span class="arrow flaticon-arrow-pointing-to-right"></span></a>
-								</div>
-							</div>
+							
 						</div>
 
 
