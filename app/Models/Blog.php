@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Dom\Comment;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -13,7 +13,7 @@ class Blog extends Model
 
     protected $guarded=[];
 
-    public function comment(){
+    public function comments(){
         return $this->hasMany(Comment::class);
     }
 
