@@ -51,23 +51,23 @@
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                @foreach ($blogs as $blog )
+                                                @foreach ($roles as $role )
                                                 <tr>
-                                                    <td>{{ $blog->id }}</td>
-                                                    <td>{{ $blog->title }}</td>
-                                                    <td>{{ $blog->body }}</td>
-                                                    <td><a href="/admin/blog/edit/{{ $blog->id }}">ویرایش</a></td>
+                                                    <td>{{ $role->id }}</td>
+                                                    <td>{{ $role->name }}</td>
+                                                    <td>{{ $role->timestamp }}</td>
+                                                    <td><a href="/admin/blog/edit/{{ $role->id }}">ویرایش</a></td>
                                                     <td>
-                                                        <form action="{{ route('blog.destroy' , ['blog'=> $blog->id]) }}" method="POST">
+                                                        <form action="" method="POST">
                                                             @csrf
                                                             @method('DELETE')
                                                             <input type="submit" value="حذف" class="bg-danger">
                                                         </form>
                                                     </td>
-                                                </tr>   
+                                                </tr>
                                                 @endforeach
-                                                
-                                                
+
+
                                                 </tbody>
 
                                             </table>

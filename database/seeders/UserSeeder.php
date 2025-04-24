@@ -23,6 +23,6 @@ class UserSeeder extends Seeder
                 'password'=>Hash::make('Mina1995@_%'),
             ]
         );
-        
+
     }
 }

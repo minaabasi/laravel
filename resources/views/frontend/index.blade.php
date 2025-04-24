@@ -894,7 +894,7 @@
                         </ul>
                         <h5><a href="blog-single.html">{{ $blog->title }}</a></h5>
                         <div class="text">{{ str()->limit($blog->body , 100) }}</div>
-                        <a href="blog-single.html" class="theme-btn btn-style-four"><span class="txt">Read More</span></a>
+                        <a href="/blog/show/{{ $blog->id }}" class="theme-btn btn-style-four"><span class="txt">Read More</span></a>
                     </div>
                 </div>
             </div>
