@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Blog;
 use App\Models\Comment;
+use App\Models\Role;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -26,7 +27,7 @@ class DatabaseSeeder extends Seeder
 
         // $this->call(BlogSeeder::class);
         Blog::factory(5)->create();
-
+        Role::factory(5)->create();
         $blogs = Blog::all();
 
     // برای هر پست، بین ۱ تا ۵ کامنت بساز
