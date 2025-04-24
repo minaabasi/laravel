@@ -96,3 +96,7 @@ Route::group(['prefix' => 'admin/productcat'] , function(){
     Route::get('/create' , [ProductController::class , 'create']);
     Route::get('/edit' , [ProductController::class , 'edit']);
 });
+
+
+//admin roles
+Route::group();
