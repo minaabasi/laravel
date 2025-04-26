@@ -44,9 +44,14 @@ class UserController extends Controller
     }
 
 
+    
+
     public function show(User $user){
         return view('dashboard.users.edit' , compact('user'));
     }
+
+
+
 
     public function update(Request $request , User $user){
         $user->update([

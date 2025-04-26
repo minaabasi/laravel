@@ -11,13 +11,13 @@
                                     <div class="page-title-box">
                                         <div class="row align-items-center">
                                             <div class="col-md-8">
-                                                <h4 class="page-title m-0">لیست مقالات</h4>
+                                                <h4 class="page-title m-0">لیست نقش ها</h4>
                                             </div>
                                             <div class="col-md-4">
                                                 <div class="float-right d-none d-md-block">
                                                     <div class="dropdown">
                                                         <a  href="/admin/blog/create" class="btn btn-primary " type="button">
-                                                          افزودن مقاله جدید
+                                                          افزودن نقش جدید
                                                         </a>
 
                                                     </div>
@@ -54,7 +54,6 @@
                                                     <td>{{ $role->id }}</td>
                                                     <td>{{ $role->name }}</td>   
                                                     <td><a href="/admin/blog/edit/{{ $role->id }}">ویرایش</a></td>
-                                                    
                                                         
                                                 </tr>
                                                 @endforeach

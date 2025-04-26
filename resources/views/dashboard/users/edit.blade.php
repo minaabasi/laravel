@@ -47,6 +47,23 @@
                                     <input class="form-control" type="text" name="name"  id="example-text-input" value="{{ $user->name }}">
                                 </div>
                             </div>
+
+                            <div class="form-group row">
+                                <label for="example-text-input" class="col-sm-2 col-form-label">نام</label>
+                                @foreach ($user->roles as $role )
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" name="name"  id="example-text-input" value="{{ $role->name }}">
+                                </div>
+                                    
+                                @endforeach
+                                
+                            </div>
+                            
+                                @foreach ($user->roles as $role )
+                                    {{ $role->name }}
+                                @endforeach
+                                
+                            
                             <div class="form-group row">
                                 <label for="example-search-input" class="col-sm-2 col-form-label">ایمیل</label>
                                 <div class="col-sm-10">

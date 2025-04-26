@@ -55,6 +55,7 @@
                                                         <td>{{ $user->id }}</td>
                                                         <td>{{ $user->name }}</td>
                                                         <td>{{ $user->email }}</td>
+                                                        
                                                         <td><a class="btn btn-primary" href="{{ route('users.show' , ['user' => $user->id]) }}">ویرایش</a></td>
                                                         <td>
                                                             <form action="{{ route('users.destroy' , ['user' =>$user->id]) }}" method="POST">
