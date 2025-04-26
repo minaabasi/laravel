@@ -100,7 +100,7 @@ Route::group(['prefix' => 'admin/productcat'] , function(){
 
 
 //admin roles
-Route::group(['prefix' => 'admin/roles'] , function(){
+Route::group(['prefix' => 'admin/role'] , function(){
     Route::get('/' , [RoleController::class , 'index'])->name('roles.list');
     Route::get('/create' , [RoleController::class , 'create']);
     Route::get('/edit' , [RoleController::class , 'edit']);

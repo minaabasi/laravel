@@ -96,7 +96,7 @@
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-account-key-outline
                                     "></i> <span> نقش ها </span> <span class="menu-arrow float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                                 <ul class="list-unstyled">
-                                    <li><a href="{{ route('users.create') }}">لیست نقش ها</a></li>
+                                    <li><a href="{{ route('roles.list') }}">لیست نقش ها</a></li>
                                     <li><a href="advanced-rating.html">افزودن نقش جدید</a></li>
                                 </ul>
                             </li>
