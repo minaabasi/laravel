@@ -10,6 +10,6 @@ class Role extends Model
     use HasFactory;
 
     public function user(){
-        return $this->belongsToMany(Role::class , 'role_user');
+        return $this->belongsToMany(User::class , 'role_user');
     }
 }
