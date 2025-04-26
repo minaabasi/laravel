@@ -52,7 +52,7 @@
                                                 <tbody>
                                                 @foreach ($users as $user )
                                                     <tr>
-                                                        <td><a href="{{ route($user->id) }}"></a></td>
+                                                        <td>{{ $user->id }}</td>
                                                         <td>{{ $user->name }}</td>
                                                         <td>{{ $user->email }}</td>
                                                         <td><a class="btn btn-primary" href="{{ route('users.show' , ['user' => $user->id]) }}">ویرایش</a></td>
@@ -65,7 +65,7 @@
                                                         </td>
                                                     </tr>
                                                 @endforeach
-                                                
+
                                                 </tbody>
 
                                             </table>

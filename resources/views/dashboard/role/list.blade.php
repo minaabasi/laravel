@@ -45,7 +45,7 @@
 
                                                     <th>شناسه</th>
                                                     <th>عنوان</th>
-                                                    <th>حذف</th>
+                                                    <th>ویرایش</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -55,10 +55,11 @@
                                                     <td>{{ $role->name }}</td>   
                                                     <td><a href="/admin/blog/edit/{{ $role->id }}">ویرایش</a></td>
                                                     
-                                                </tr>   
+                                                        
+                                                </tr>
                                                 @endforeach
-                                                
-                                                
+
+
                                                 </tbody>
 
                                             </table>
