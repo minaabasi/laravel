@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('user')->onDelete('cascade');
+            $table->decimal('total_price' , 10 , 2);
+            $table->text('address');
+            $table->string('tracking_number');
+            $table->text('notes');
             $table->timestamps();
         });
     }
