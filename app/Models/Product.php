@@ -12,4 +12,8 @@ class Product extends Model
     public function order(){
         return $this->belongsToMany(Order::class);
     }
+
+
+    protected $fillable=['title' , 'description' . 'price' , 'sale_price'];
+    protected $guarded=[];
 }

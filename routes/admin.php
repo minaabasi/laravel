@@ -69,7 +69,7 @@ Route::group(['middleware' => ['auth:web'] ,'prefix' => 'admin/blogcat'], functi
 
 //admin product
 Route::group(['middleware' => ['auth:web'] ,'prefix' => 'admin/product'] , function(){
-    Route::get('/' , [ProductController::class , 'list'])->name('product.list');
+    Route::get('/list' , [ProductController::class , 'index'])->name('product.list');
     Route::get('/create' , [ProductController::class , 'create'])->name('product.create');
     Route::post('/store' , [ProductController::class , 'store'])->name('product.store');
     Route::get('/edit' , [ProductController::class , 'edit'])->name('product.edit');
