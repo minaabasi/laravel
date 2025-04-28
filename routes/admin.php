@@ -69,10 +69,12 @@ Route::group(['middleware' => ['auth:web'] ,'prefix' => 'admin/blogcat'], functi
 
 //admin product
 Route::group(['middleware' => ['auth:web'] ,'prefix' => 'admin/product'] , function(){
-    Route::get('/' , [ProductController::class , 'list']);
-    Route::get('/list' , [ProductController::class , 'list']);
-    Route::get('/create' , [ProductController::class , 'create']);
-    Route::get('/edit' , [ProductController::class , 'edit']);
+    Route::get('/' , [ProductController::class , 'list'])->name('product.list');
+    Route::get('/create' , [ProductController::class , 'create'])->name('product.create');
+    Route::post('/store' , [ProductController::class , 'store'])->name('product.store');
+    Route::get('/edit' , [ProductController::class , 'edit'])->name('product.edit');
+    Route::put('/update' , [ProductController::class , 'update'])->name('product.update');
+    Route::delete('/destroy' , [ProductController::class , 'destroy'])->name('product.destroy');
 });
 
 

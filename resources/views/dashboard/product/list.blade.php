@@ -42,43 +42,22 @@
                                             <table id="mainTable" class="table table-striped mb-0">
                                                 <thead>
                                                 <tr>
-                                                    <th>عنوان</th>
-                                                    <th>تاریخ</th>
+                                                    <th>نام محصول</th>
+                                                    <th>قیمت</th>
                                                     <th>ویرایش</th>
                                                     <th>حذف</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
-                                                <tr>
-                                                    <td>Car</td>
-                                                    <td>100</td>
-                                                    <td>200</td>
-                                                    <td>0</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Bike</td>
-                                                    <td>330</td>
-                                                    <td>240</td>
-                                                    <td>1</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Plane</td>
-                                                    <td>430</td>
-                                                    <td>540</td>
-                                                    <td>3</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Yacht</td>
-                                                    <td>100</td>
-                                                    <td>200</td>
-                                                    <td>0</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Segway</td>
-                                                    <td>330</td>
-                                                    <td>240</td>
-                                                    <td>1</td>
-                                                </tr>
+                                                @foreach ($products as $product )
+                                                    <tr>
+                                                        <td>{{ $product->title }}</td>
+                                                        <td>{{ $product->price }}</td>
+                                                        <td>200</td>
+                                                        <td>0</td>
+                                                    </tr>
+                                                @endforeach
+                                                
                                                 </tbody>
 
                                             </table>
