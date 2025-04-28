@@ -53,7 +53,7 @@
                                                     <tr>
                                                         <td>{{ $product->title }}</td>
                                                         <td>{{ $product->price }}</td>
-                                                        <td>200</td>
+                                                        <td><a href="{{ route('product.edit' , ['product'=> $product->id]) }}">ویرایش</a></td>
                                                         <td>0</td>
                                                     </tr>
                                                 @endforeach

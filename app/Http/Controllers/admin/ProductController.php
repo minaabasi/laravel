@@ -32,7 +32,8 @@ class ProductController extends Controller
         return redirect()->route('product.list');
     }
 
-    public function edit(){
-        return view('dashboard.product.edit');
+    public function edit(Product $product){
+
+        return view('dashboard.product.edit' , compact('product'));
     }
 }

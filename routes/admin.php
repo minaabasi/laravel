@@ -72,7 +72,7 @@ Route::group(['middleware' => ['auth:web'] ,'prefix' => 'admin/product'] , funct
     Route::get('/list' , [ProductController::class , 'index'])->name('product.list');
     Route::get('/create' , [ProductController::class , 'create'])->name('product.create');
     Route::post('/store' , [ProductController::class , 'store'])->name('product.store');
-    Route::get('/edit' , [ProductController::class , 'edit'])->name('product.edit');
+    Route::get('/edit/{product}' , [ProductController::class , 'edit'])->name('product.edit');
     Route::put('/update' , [ProductController::class , 'update'])->name('product.update');
     Route::delete('/destroy' , [ProductController::class , 'destroy'])->name('product.destroy');
 });
