@@ -37,31 +37,34 @@
                     <div class="card-body">
 
 
-
-                        <div class="form-group row">
-                            <label  class="col-sm-2 col-form-label">عنوان دسته</label>
-                            <div class="col-sm-10">
-                                <input class="form-control" type="text" >
+                        <form action="route('productcat.store')" method="POST">
+                            @csrf
+                            <div class="form-group row">
+                                <label  class="col-sm-2 col-form-label">عنوان دسته</label>
+                                <div class="col-sm-10">
+                                    <input class="form-control" type="text" >
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group row">
-                            <label  class="col-sm-2 col-form-label">دسته مادر</label>
-                            <div class="col-sm-10">
-                                <select class="form-control">
-                                    <option>بدون دسته مادر</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                </select>
-                                
+                            <div class="form-group row">
+                                <label  class="col-sm-2 col-form-label">دسته مادر</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control">
+                                        <option>بدون دسته مادر</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                    </select>
+                                    
+                                </div>
                             </div>
-                        </div>
+                            
+                            <div class="form-group row ">
+                                <label class="col-sm-2 col-form-label"></label>
+                                <div class="col-sm-10">
+                                    <button  class="form-control btn btn-primary" >ارسال</button>
+                                </div>
+                            </div>
+                        </form>
                         
-                        <div class="form-group row ">
-                            <label class="col-sm-2 col-form-label"></label>
-                            <div class="col-sm-10">
-                                <button  class="form-control btn btn-primary" >ارسال</button>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div> <!-- end col -->

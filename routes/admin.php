@@ -98,9 +98,9 @@ Route::group(['prefix' => 'admin/productcat'] , function(){
     Route::get('/list' , [ProductCatController::class , 'index'])->name('productcat.list');
     Route::get('/create' , [ProductCatController::class , 'create'])->name('productcat.create');
     Route::post('/store' , [ProductCatController::class , 'store'])->name('productcat.store');
-    Route::get('/edit/{product}' , [ProductCatController::class , 'edit'])->name('productcat.edit');
-    Route::put('/update' , [ProductCatController::class , 'update'])->name('productcat.update');
-    Route::delete('/destroy' , [ProductCatController::class , 'destroy'])->name('productcat.destroy');
+    Route::get('/edit/{productcat}' , [ProductCatController::class , 'show'])->name('productcat.show');
+    Route::put('/update/{productcat}' , [ProductCatController::class , 'update'])->name('productcat.update');
+    Route::delete('/destroy/{productcat}' , [ProductCatController::class , 'destroy'])->name('productcat.destroy');
 });
 
 
