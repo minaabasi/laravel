@@ -16,7 +16,7 @@
                                             <div class="col-md-4">
                                                 <div class="float-right d-none d-md-block">
                                                     <div class="dropdown">
-                                                        <a  href="/admin/blog/create" class="btn btn-primary " type="button">
+                                                        <a  href="{{ route('productcat.create') }}" class="btn btn-primary " type="button">
                                                           افزودن دسته بندی جدید
                                                         </a>
 

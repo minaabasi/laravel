@@ -12,4 +12,8 @@ class ProductCatController extends Controller
         $productcat=Productcat::all();
         return view('dashboard.productcat.list' , compact('productcat'));
     }
+
+    public function create(){
+        return view('dashboard.productcat.create');
+    }
 }
