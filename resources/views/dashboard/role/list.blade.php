@@ -16,7 +16,7 @@
                                             <div class="col-md-4">
                                                 <div class="float-right d-none d-md-block">
                                                     <div class="dropdown">
-                                                        <a  href="/admin/blog/create" class="btn btn-primary " type="button">
+                                                        <a  href="{{ route('role.create') }}" class="btn btn-primary " type="button">
                                                           افزودن نقش جدید
                                                         </a>
 
@@ -46,6 +46,7 @@
                                                     <th>شناسه</th>
                                                     <th>عنوان</th>
                                                     <th>ویرایش</th>
+                                                    <th>حذف</th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
@@ -53,7 +54,14 @@
                                                 <tr>
                                                     <td>{{ $role->id }}</td>
                                                     <td>{{ $role->name }}</td>   
-                                                    <td><a href="/admin/blog/edit/{{ $role->id }}">ویرایش</a></td>
+                                                    <td><a href="{{ route('role.show' , ['role'=>$role->id]) }}">ویرایش</a></td>
+                                                    <td>
+                                                        <form action="{{ route('role.destroy' , ['role'=>$role->id]) }}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <input type="submit" value="حذف">
+                                                        </form>
+                                                    </td>
                                                         
                                                 </tr>
                                                 @endforeach

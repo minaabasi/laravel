@@ -107,6 +107,9 @@ Route::group(['prefix' => 'admin/productcat'] , function(){
 //admin roles
 Route::group(['prefix' => 'admin/role'] , function(){
     Route::get('/' , [RoleController::class , 'index'])->name('roles.list');
-    Route::get('/create' , [RoleController::class , 'create']);
-    Route::get('/edit' , [RoleController::class , 'edit']);
+    Route::get('/create' , [RoleController::class , 'create'])->name('role.create');
+    Route::post('/store' , [RoleController::class , 'store'])->name('role.store');
+    Route::get('/show/{role}' , [RoleController::class , 'show'])->name('role.show');
+    Route::put('/update/{role}' , [RoleController::class , 'update'])->name('role.update');
+    Route::delete('/destroy/{role}' , [RoleController::class , 'destroy'])->name('role.destroy');
 });
