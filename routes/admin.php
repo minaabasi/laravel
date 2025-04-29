@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\AuthController;
 use App\Http\Controllers\admin\BlogcatController;
 use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\ForgetPasswordController;
+use App\Http\Controllers\admin\ProductCatController;
 use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\RoleController;
 use App\Http\Controllers\admin\UserController;
@@ -94,10 +95,12 @@ Route::get('/admin/profile/{id}' , [ProfileController::class , 'index'])->middle
 
 //admin product
 Route::group(['prefix' => 'admin/productcat'] , function(){
-    Route::get('/' , [ProductController::class , 'list']);
-    Route::get('/list' , [ProductController::class , 'list']);
-    Route::get('/create' , [ProductController::class , 'create']);
-    Route::get('/edit' , [ProductController::class , 'edit']);
+    Route::get('/list' , [ProductCatController::class , 'index'])->name('productcat.list');
+    Route::get('/create' , [ProductCatController::class , 'create'])->name('productcat.create');
+    Route::post('/store' , [ProductCatController::class , 'store'])->name('productcat.store');
+    Route::get('/edit/{product}' , [ProductCatController::class , 'edit'])->name('productcat.edit');
+    Route::put('/update' , [ProductCatController::class , 'update'])->name('productcat.update');
+    Route::delete('/destroy' , [ProductCatController::class , 'destroy'])->name('productcat.destroy');
 });
 
 

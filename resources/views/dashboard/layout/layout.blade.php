@@ -80,7 +80,7 @@
                                 <ul class="list-unstyled">
                                     <li><a href="/admin/product/list">لیست محصولات</a></li>
                                     <li><a href="/admin/product/create">افزودن محصول جدید</a></li>
-                                    <li><a href="/admin/product">دسته بندی محصولات</a></li>
+                                    <li><a href="{{ route('productcat.list') }}">دسته بندی محصولات</a></li>
                                 </ul>
                             </li>
 
