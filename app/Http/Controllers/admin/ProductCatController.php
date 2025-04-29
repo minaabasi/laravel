@@ -29,8 +29,6 @@ class ProductCatController extends Controller
 
     }
 
-    public function destroy(){
-        
-    }
+    public function destroy(){}
 }
 

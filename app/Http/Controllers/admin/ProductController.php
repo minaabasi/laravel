@@ -5,7 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
 use App\Models\Product;
-use GuzzleHttp\Psr7\Request;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -33,7 +33,23 @@ class ProductController extends Controller
     }
 
     public function edit(Product $product){
-
         return view('dashboard.product.edit' , compact('product'));
+    }
+
+    public function update(Request $request , Product $product){
+        
+        $product->update([
+            'title'=>$request->title,
+            'description'=>$request->description,
+            'price'=>$request->price,
+            'sale_price'=>$request->sale_price,
+        ]);
+
+        return redirect()->route('product.list');
+    }
+
+    public function destroy(Product $product){
+        $product->delete();
+        return redirect()->route('product.list');   
     }
 }

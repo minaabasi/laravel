@@ -15,7 +15,7 @@
                         <div class="col-md-4">
                             <div class="float-right d-none d-md-block">
                                 <div class="dropdown">
-                                    <a href="/admin/blog/list" class="btn btn-primary " type="button" >
+                                    <a href="{{ route('product.list') }}" class="btn btn-primary " type="button" >
                                         لیست محصولات
                                     </a>
 

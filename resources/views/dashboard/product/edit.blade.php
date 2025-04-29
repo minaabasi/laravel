@@ -38,7 +38,7 @@
 
 
 
-                        <form action="{{ route('product.update') }}" method="POST">
+                        <form action="{{ route('product.update' , ['product'=>$product->id]) }}" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="form-group row">

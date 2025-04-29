@@ -16,7 +16,7 @@
                                             <div class="col-md-4">
                                                 <div class="float-right d-none d-md-block">
                                                     <div class="dropdown">
-                                                        <a  href="/admin/blog/create" class="btn btn-primary " type="button">
+                                                        <a  href="{{ route('product.create') }}" class="btn btn-primary " type="button">
                                                           افزودن محصول جدید
                                                         </a>
 
@@ -54,7 +54,13 @@
                                                         <td>{{ $product->title }}</td>
                                                         <td>{{ $product->price }}</td>
                                                         <td><a href="{{ route('product.edit' , ['product'=> $product->id]) }}">ویرایش</a></td>
-                                                        <td>0</td>
+                                                        <td>
+                                                            <form action="{{ route('product.destroy' , ['product'=>$product->id]) }}" method="POST">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <input type="submit" value="حذف">
+                                                            </form>
+                                                        </td>
                                                     </tr>
                                                 @endforeach
                                                 
