@@ -3,6 +3,7 @@
 use App\Http\Controllers\frontend\BlogController;
 use App\Http\Controllers\frontend\CommentController as FrontendCommentController;
 use App\Http\Controllers\frontend\HomeController;
+use App\Http\Controllers\frontend\ProductController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -26,6 +27,12 @@ Route::get('/' ,[HomeController::class , 'index'] )->name('home');
 //blog show
 Route::get('/blog' , [BlogController::class , 'index'])->name('blog');
 Route::get('/blog/show/{blog}' , [BlogController::class , 'show'])->name('blog.show');
+
+//product route
+Route::prefix('product')->group(function () {
+    Route::get('/' , [ProductController::class , 'index'])->name('product.index');
+    Route::get('/show/{product}' , [ProductController::class , 'show'])->name('product.show');
+});
 
 //comment Route
 Route::post('/comment/store' , [FrontendCommentController::class , 'store'])->name('user/comment/store');
