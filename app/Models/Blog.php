@@ -14,7 +14,7 @@ class Blog extends Model
     protected $guarded=[];
 
     public function comments(){
-        return $this->hasMany(Comment::class);
+        return $this->morphMany(Comment::class , 'commentable');
     }
 
     
