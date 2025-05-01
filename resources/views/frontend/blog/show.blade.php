@@ -88,19 +88,19 @@
 								<h3>Post Comments (2)</h3>
 							</div>
 
-							@foreach($blog->comments as $comment)
+							
 							
 							
 							<div class="comment-box">
 								<div class="comment">
 									<div class="author-thumb"><img src="https://via.placeholder.com/60x60" alt=""></div>
-									<div class="comment-info clearfix"><strong>{{ $comment->comment }}</strong><div class="comment-time">February 15, 2020 at 3:48pm</div></div>
+									<div class="comment-info clearfix"><strong>hiiiiiiii</strong><div class="comment-time">February 15, 2020 at 3:48pm</div></div>
 									<div class="text">Tempor incididunt labore loremy enim veniams lorem ipsum dol labore dolore magna enim ad veniam quis incididunt ut laboret dolore sed magna aliqua.</div>
 									<a class="theme-btn reply-btn" href="#">Reply <span class="arrow flaticon-arrow-pointing-to-right"></span></a>
 								</div>
 							</div>
 							
-							@endforeach								
+														
 
 
 							
@@ -117,10 +117,19 @@
 							</div>
 
 							<!--Comment Form-->
-							<form method="post" action="blog.html">
+							<form method="POST" action="{{ route('user/comment/store') }}">
+								@csrf
 								<div class="row clearfix">
 
 									<div class="col-lg-4 col-md-6 col-sm-12 form-group">
+										<input type="hidden" name="commentable_type" value="App\Models\Post" >
+									</div>
+
+									<div class="col-lg-4 col-md-6 col-sm-12 form-group">
+										<input type="hidden" name="commentable_id" value="{{ $blog->id }}" >
+									</div>
+
+									{{-- <div class="col-lg-4 col-md-6 col-sm-12 form-group">
 										<input type="text" name="username" placeholder="Name" required>
 									</div>
 
@@ -130,14 +139,17 @@
 
 									<div class="col-lg-4 col-md-12 col-sm-12 form-group">
 										<input type="text" name="website" placeholder="Website" required>
+									</div> --}}
+
+									<div class="col-lg-12 col-md-12 col-sm-12 form-group">
+										<textarea class="" name="comment" placeholder="Message"></textarea>
+									</div>
+									<div class="col-lg-12 col-md-12 col-sm-12 form-group">
+										<input type="hidden" name="status" value="0" >
 									</div>
 
 									<div class="col-lg-12 col-md-12 col-sm-12 form-group">
-										<textarea class="" name="message" placeholder="Message"></textarea>
-									</div>
-
-									<div class="col-lg-12 col-md-12 col-sm-12 form-group">
-										<button class="theme-btn btn-style-one" type="submit" name="submit-form"><span class="txt">SEND MESSAGE</span></button>
+										<button class="theme-btn btn-style-one" type="submit" ><span class="txt">SEND MESSAGE</span></button>
 									</div>
 
 								</div>
