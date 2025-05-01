@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('comment');
             $table->boolean('status');
-            $table->foreignId('blog_id')->constrained()->onDelete('cascade');
+            $table->morphs('commentable');
             $table->timestamps();
         });
     }

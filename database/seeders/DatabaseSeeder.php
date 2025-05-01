@@ -31,13 +31,7 @@ class DatabaseSeeder extends Seeder
         $blogs = Blog::all();
 
     // برای هر پست، بین ۱ تا ۵ کامنت بساز
-    foreach ($blogs as $blog) {
-        Comment::factory()
-            ->count(rand(1, 5))
-            ->create([
-                'blog_id' => $blog->id,
-            ]);
-    }
+    
 
     $this->call(UserSeeder::class);
         
