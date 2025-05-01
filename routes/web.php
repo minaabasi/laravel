@@ -30,7 +30,7 @@ Route::get('/blog/show/{blog}' , [BlogController::class , 'show'])->name('blog.s
 
 //product route
 Route::prefix('product')->group(function () {
-    Route::get('/' , [ProductController::class , 'index'])->name('product.index');
+    Route::get('/' , [ProductController::class , 'index'])->name('products');
     Route::get('/show/{product}' , [ProductController::class , 'show'])->name('product.show');
 });
 

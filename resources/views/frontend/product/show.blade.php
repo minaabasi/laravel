@@ -122,11 +122,11 @@
 								<div class="row clearfix">
 
 									<div class="col-lg-4 col-md-6 col-sm-12 form-group">
-										<input type="hidden" name="commentable_type" value="App\Models\Post" >
+										<input type="hidden" name="commentable_type" value="App\Models\Product" >
 									</div>
 
 									<div class="col-lg-4 col-md-6 col-sm-12 form-group">
-										<input type="hidden" name="commentable_id" value="{{ $blog->id }}" >
+										<input type="hidden" name="commentable_id" value="{{ $product->id }}" >
 									</div>
 
 									{{-- <div class="col-lg-4 col-md-6 col-sm-12 form-group">

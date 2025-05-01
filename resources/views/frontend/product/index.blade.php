@@ -32,7 +32,7 @@
 							</ul>
 							<h5><a href="blog-single.html">{{ $product->title }}</a></h5>
 							<div class="text">{{ str()->limit($product->body , 150) }}</div>
-							<a href="{{ route('blog.show' , ['blog' => $product->id]) }}" class="theme-btn btn-style-four"><span class="txt">Read More</span></a>
+							<a href="{{ route('product.show' , ['product' => $product->id]) }}" class="theme-btn btn-style-four"><span class="txt">Read More</span></a>
 						</div>
 					</div>
 				</div>

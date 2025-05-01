@@ -93,6 +93,7 @@
 						<div class="navbar-collapse collapse clearfix" id="navbarSupportedContent">
 							<ul class="navigation clearfix">
 								<li><a href="{{ route('home') }}">Home</a></li>
+								<li><a href="{{ route('products') }}">product</a></li>
 								<li><a href="{{ route('blog') }}">blog</a></li>
 								<li><a href="#">About</a></li>
 								<li><a href="contact.html">Contact us</a></li>
