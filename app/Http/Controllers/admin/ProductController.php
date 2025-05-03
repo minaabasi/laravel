@@ -22,12 +22,15 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request){
 
+
         Product::create([
             'title'=>$request->title,
             'description'=>$request->description,
             'price'=>$request->price,
             'sale_price'=>$request->sale_price,
         ]);
+
+        
 
         return redirect()->route('product.list');
     }

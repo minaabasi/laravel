@@ -38,7 +38,7 @@
 
 
 
-                        <form action="{{ route('product.store') }}" method="POST">
+                        <form action="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group row">
                                 <label  class="col-sm-2 col-form-label">نام محصول</label>
@@ -55,13 +55,19 @@
                             <div class="form-group row">
                                 <label  class="col-sm-2 col-form-label">قیمت</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="price" >
+                                    <input type="number" class="form-control" name="price" >
                                 </div>
                             </div>
                             <div class="form-group row">
                                 <label  class="col-sm-2 col-form-label">تخفیف</label>
                                 <div class="col-sm-10">
-                                    <input class="form-control" name="sale_price" >
+                                    <input type="number" class="form-control" name="sale_price" >
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label  class="col-sm-2 col-form-label">تصویر محصول</label>
+                                <div class="col-sm-10">
+                                    <input type="file" class="form-control" name="img" >
                                 </div>
                             </div>
                             <div class="form-group row ">
