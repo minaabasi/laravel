@@ -85,19 +85,22 @@
 						<!-- Comments Area -->
 						<div class="comments-area">
 							<div class="group-title">
-								<h3>Post Comments (2)</h3>
+								<h3>Post Comments </h3>
 							</div>
 
 							
 							
 							
 							<div class="comment-box">
+								@foreach ($blog->comments as $comment )
 								<div class="comment">
 									<div class="author-thumb"><img src="https://via.placeholder.com/60x60" alt=""></div>
-									<div class="comment-info clearfix"><strong>hiiiiiiii</strong><div class="comment-time">February 15, 2020 at 3:48pm</div></div>
+									<div class="comment-info clearfix"><strong>{{ $comment->comment }}</strong><div class="comment-time">February 15, 2020 at 3:48pm</div></div>
 									<div class="text">Tempor incididunt labore loremy enim veniams lorem ipsum dol labore dolore magna enim ad veniam quis incididunt ut laboret dolore sed magna aliqua.</div>
 									<a class="theme-btn reply-btn" href="#">Reply <span class="arrow flaticon-arrow-pointing-to-right"></span></a>
 								</div>
+								@endforeach
+								
 							</div>
 							
 														
@@ -122,7 +125,7 @@
 								<div class="row clearfix">
 
 									<div class="col-lg-4 col-md-6 col-sm-12 form-group">
-										<input type="hidden" name="commentable_type" value="App\Models\Post" >
+										<input type="hidden" name="commentable_type" value="App\Models\Blog" >
 									</div>
 
 									<div class="col-lg-4 col-md-6 col-sm-12 form-group">

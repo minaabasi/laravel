@@ -13,8 +13,8 @@ class BlogController extends Controller
         return view('frontend.blog.index' , compact('blogs'));
     }
     
-    public function show(Request $request , Blog $blog){
-        $blog->load('comments');
+    public function show(Blog $blog){
+
         return view('frontend.blog.show' , compact('blog'));
     }
 }
