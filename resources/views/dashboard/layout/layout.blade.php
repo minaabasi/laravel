@@ -81,6 +81,7 @@
                                     <li><a href="/admin/product/list">لیست محصولات</a></li>
                                     <li><a href="/admin/product/create">افزودن محصول جدید</a></li>
                                     <li><a href="{{ route('productcat.list') }}">دسته بندی محصولات</a></li>
+                                    <li><a href="#">نظرات</a></li>
                                 </ul>
                             </li>
 
