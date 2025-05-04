@@ -37,7 +37,7 @@
                     <div class="card-body">
 
 
-                        <form action="/admin/blog/store" method="POST" >
+                        <form action="/admin/blog/store" method="POST" enctype="multipart/form-data" >
                             @csrf
 
                         <div class="form-group row">
@@ -79,9 +79,9 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="example-text-input" class="col-sm-2 col-form-label ">تصویر شاخص</label>
+                            <label class="col-sm-2 col-form-label ">تصویر شاخص</label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="file" id="example-text-input" name="pic">
+                                <input class="form-control" type="file"  name="img">
                             </div>
                         </div>
                         <div class="form-group row">

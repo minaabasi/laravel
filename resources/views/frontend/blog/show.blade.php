@@ -23,7 +23,7 @@
                 	<div class="blog-single padding-right">
 						<div class="inner-box">
 							<div class="image">
-								<img src="https://via.placeholder.com/800x450" alt="" />
+								<img src="#" alt="" />
 							</div>
 							<div class="lower-content">
 								<ul class="post-meta">

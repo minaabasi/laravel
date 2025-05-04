@@ -23,7 +23,7 @@
                 <div class="news-block col-lg-4 col-md-6 col-sm-12">
 					<div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
 						<div class="image">
-							<a href="blog-single.html"><img src="https://via.placeholder.com/360x280" alt="" /></a>
+							<a href="blog-single.html"><img src="{{ $blog->images }}" alt="" /></a>
 						</div>
 						<div class="lower-content">
 							<ul class="post-meta">

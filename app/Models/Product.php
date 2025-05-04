@@ -17,6 +17,10 @@ class Product extends Model
         return $this->morphMany(Comment::class , 'commentable');
     }
 
+    public function images(){
+        return $this->morphmany(Image::class , 'imageable');
+    }
+
 
     protected $fillable=['title' , 'description' , 'price' , 'sale_price'];
     protected $guarded=[];

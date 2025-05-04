@@ -24,10 +24,17 @@ class BlogController extends Controller
         $request->validate([
             'title'=> 'required',
         ]);
-        Blog::create([
+
+        $imagepath=$request->file('img')->store('images/blog');
+
+        $blog=Blog::create([
             'title'=>$request->title,
             'body'=>$request->body,
             'url'=>$request->url
+        ]);
+
+        $blog->images()->create([
+            'path'=>$imagepath,
         ]);
 
         return redirect('/admin/blog/list');

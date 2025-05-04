@@ -22,13 +22,22 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request){
 
+        
+        
 
-        Product::create([
+        $imagepath=$request->file('img')->store('images/product');
+
+        $product=Product::create([
             'title'=>$request->title,
             'description'=>$request->description,
             'price'=>$request->price,
             'sale_price'=>$request->sale_price,
         ]);
+
+        $product->images()->create([
+            'path'=>$imagepath
+        ]);
+
 
         
 
